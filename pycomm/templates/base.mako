@@ -52,6 +52,7 @@
 
     <div class="container">
 
+      ${common.flash()}
       ${next.body()}
 
       <hr>
@@ -66,22 +67,25 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="${request.static_url('pycomm:static/js/jquery-1.7.1.min.js')}"></script>
-    <script src="${request.static_url('pycomm:static/js/bootstrap-transition.js')}"></script>
+    ##<script src="${request.static_url('pycomm:static/js/bootstrap-transition.js')}"></script>
     <script src="${request.static_url('pycomm:static/js/bootstrap-alert.js')}"></script>
-    <script src="${request.static_url('pycomm:static/js/bootstrap-modal.js')}"></script>
-    <script src="${request.static_url('pycomm:static/js/bootstrap-dropdown.js')}"></script>
-    <script src="${request.static_url('pycomm:static/js/bootstrap-scrollspy.js')}"></script>
-    <script src="${request.static_url('pycomm:static/js/bootstrap-tab.js')}"></script>
-    <script src="${request.static_url('pycomm:static/js/bootstrap-tooltip.js')}"></script>
-    <script src="${request.static_url('pycomm:static/js/bootstrap-popover.js')}"></script>
-    <script src="${request.static_url('pycomm:static/js/bootstrap-button.js')}"></script>
-    <script src="${request.static_url('pycomm:static/js/bootstrap-collapse.js')}"></script>
-    <script src="${request.static_url('pycomm:static/js/bootstrap-carousel.js')}"></script>
-    <script src="${request.static_url('pycomm:static/js/bootstrap-typeahead.js')}"></script>
+    ##<script src="${request.static_url('pycomm:static/js/bootstrap-modal.js')}"></script>
+    ##<script src="${request.static_url('pycomm:static/js/bootstrap-dropdown.js')}"></script>
+    ##<script src="${request.static_url('pycomm:static/js/bootstrap-scrollspy.js')}"></script>
+    ##<script src="${request.static_url('pycomm:static/js/bootstrap-tab.js')}"></script>
+    ##<script src="${request.static_url('pycomm:static/js/bootstrap-tooltip.js')}"></script>
+    ##<script src="${request.static_url('pycomm:static/js/bootstrap-popover.js')}"></script>
+    ##<script src="${request.static_url('pycomm:static/js/bootstrap-button.js')}"></script>
+    ##<script src="${request.static_url('pycomm:static/js/bootstrap-collapse.js')}"></script>
+    ##<script src="${request.static_url('pycomm:static/js/bootstrap-carousel.js')}"></script>
+    ##<script src="${request.static_url('pycomm:static/js/bootstrap-typeahead.js')}"></script>
 
     ## defined as empty in this file, overload if you want these extra footer elements
     ${self.extra_footer_css()}
     ${self.extra_footer_js()}
+    <script>
+      $(".alert").alert()
+    </script>
   </body>
 </html>
 
@@ -94,3 +98,4 @@
 <%def name="extra_header_js()"></%def>
 <%def name="extra_footer_css()"></%def>
 <%def name="extra_footer_js()"></%def>
+<%namespace name="common" file="/common.mako"/>
