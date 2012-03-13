@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from pyramid.view import view_config
 
 from ..forms.events import EventAddForm
@@ -6,7 +8,7 @@ from ..models import DBSession
 from ..models.events import Event
 
 
-class Event(BaseView):
+class Events(BaseView):
 
     @view_config(
     	route_name='home', 
