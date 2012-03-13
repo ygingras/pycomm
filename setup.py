@@ -12,8 +12,10 @@ requires = [
     'transaction',
     'pyramid_tm',
     'pyramid_debugtoolbar',
+    'pyramid_beaker',
     'zope.sqlalchemy',
     'waitress',
+    'WTForms==1.0.1',
     ]
 
 setup(name='pycomm',
