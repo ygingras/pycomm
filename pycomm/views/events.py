@@ -6,5 +6,5 @@ from ..models.events import Event
 
 @view_config(route_name='home', renderer='pycomm:templates/home.mako')
 def home(request):
-    one = DBSession.query(Event).filter(Event.name=='one').first()
+    one = DBSession.query(Event).first()
     return {'one':one, 'project':'pycomm'}

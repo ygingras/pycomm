@@ -7,7 +7,7 @@ from sqlalchemy import (
     DateTime, 
     Float
     )
-from pycomm.models import Base
+from . import Base
 
 
 class Event(Base):
