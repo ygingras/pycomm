@@ -1,8 +1,9 @@
 from pyramid.view import view_config
 
+from ..forms.events import EventAddForm
 from ..models import DBSession
 from ..models.events import Event
-from ..forms.event_forms import EventAddForm
+
 
 @view_config(route_name='home', renderer='pycomm:templates/home.mako')
 def home(request):
