@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*- 
-<%inherit file="base.mako"/>
+<%inherit file="master.mako"/>
 
 <h1>HOME</h1>
 

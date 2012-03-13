@@ -1,13 +1,10 @@
 # -*- coding: utf-8 -*- 
+<%inherit file="base.mako"/>
 
-<html>
-  <body>
-    <ul>
-      % for event in events:
-      <li>
-          ${event.title}
-      </li>
-      % endfor
-    </ul>
-  </body>
-</html>
+<ul>
+  % for event in events:
+  <li>
+      ${event.title}
+  </li>
+  % endfor
+</ul>
