@@ -1,19 +1,28 @@
 # -*- coding: utf-8 -*- 
 <%inherit file="base.mako"/>
+<%namespace name="forms" file="/forms.mako"/>
 
 <h1>Add Event</h1>
 
-<form method=post action="/add-event">
-<dl class="input-errors">
-<dl>
-    <dd>${ form.title.label } ${ form.title }</dd>
-    <dd>${ form.start_date.label } ${ form.start_date }</dd>
-    <dd>${ form.end_date.label } ${ form.end_date }</dd>
-    <dd>${ form.longitude.label } ${ form.longitude }</dd>
-    <dd>${ form.latitude.label } ${ form.latitude }</dd>
-    <dd>${ form.description.label } ${ form.description }</dd>
-    <dd>${ form.contact_name.label } ${ form.contact_name }</dd>
-    <dd>${ form.contact_email.label } ${ form.contact_email }</dd>
-</dl>
-<input type=submit value='Submit'>
+<form
+	id="add-form"
+	class="form-horizontal"
+	method="post"
+	action="${request.route_url('add-event')}",
+	enctype="multipart/form-data">
+
+    ${forms.render(form.title)}
+    ${forms.render(form.start_date)}
+    ${forms.render(form.end_date)}
+    ${forms.render(form.longitude)}
+    ${forms.render(form.latitude)}
+    ${forms.render(form.description)}
+    ${forms.render(form.contact_name)}
+    ${forms.render(form.contact_email)}
+
+	<div class="form-actions">
+		<button type="submit" name="save" class="btn btn-primary">Add</button>
+		<a href="${request.route_url('home')}" class="btn">Cancel</a>
+	</div>
+
 </form>
