@@ -22,6 +22,10 @@
     ##<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
     ##<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
     ##<link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+
+    ## defined as empty in this file, overload if you want these extra header elements
+    ${self.extra_header_css()}
+    ${self.extra_header_js()}
   </head>
 
   <body>
@@ -75,9 +79,18 @@
     <script src="${request.static_url('pycomm:static/js/bootstrap-carousel.js')}"></script>
     <script src="${request.static_url('pycomm:static/js/bootstrap-typeahead.js')}"></script>
 
+    ## defined as empty in this file, overload if you want these extra footer elements
+    ${self.extra_footer_css()}
+    ${self.extra_footer_js()}
   </body>
 </html>
+
 <%!
     from time import time
     rid = int(time())
 %>
+
+<%def name="extra_header_css()"></%def>
+<%def name="extra_header_js()"></%def>
+<%def name="extra_footer_css()"></%def>
+<%def name="extra_footer_js()"></%def>

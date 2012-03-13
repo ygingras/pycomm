@@ -26,3 +26,26 @@
 	</div>
 
 </form>
+
+<%def name="extra_footer_css()">
+    <link type="text/css"   
+          href="${request.static_url('pycomm:static/css/jquery-ui-1.8.18.custom.css')}" 
+          rel="Stylesheet" />	
+</%def>
+
+<%def name="extra_footer_js()">
+      <script type="text/javascript"
+              src="${request.static_url('pycomm:static/js/jquery-1.7.1.min.js')}">
+      </script>
+
+      <script type="text/javascript"
+              src="${request.static_url('pycomm:static/js/jquery-ui-1.8.18.custom.min.js')}">
+      </script>
+
+      <script>
+        $(document).ready(function() {
+          $('#start_date').datepicker();
+          $('#end_date').datepicker();
+        });
+      </script>
+</%def>

@@ -12,8 +12,16 @@ from wtforms import (
 class EventAddForm(Form):
     title = TextAreaField('Event Title', [validators.Length(min=4, max=255), 
                                           validators.required()])
-    start_date = DateTimeField('Start Date', [validators.required()])
-    end_date = DateTimeField('End Date', [validators.optional()])
+    start_date = DateTimeField(
+        'Start Date',
+        [validators.required()],
+        format='%Y-%m-%d'
+        )
+    end_date = DateTimeField(
+        'End Date',
+        [validators.optional()],
+        format='%Y-%m-%d'
+        )
 
     longitude = FloatField('Longitude', [validators.required()])
     latitude = FloatField('Latitude', [validators.required()])
