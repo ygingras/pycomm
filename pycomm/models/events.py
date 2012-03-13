@@ -1,14 +1,18 @@
 
-from sqlalchemy import (Column, 
-                        Integer, 
-                        Unicode, 
-                        UnicodeText, 
-                        DateTime, 
-                        Float)
+from sqlalchemy import (
+    Column, 
+    Integer, 
+    Unicode, 
+    UnicodeText, 
+    DateTime, 
+    Float
+    )
 from pycomm.models import Base
+
 
 class Event(Base):
     __tablename__ = 'events'
+
     id = Column(Integer, primary_key=True)
     title = Column(Unicode, unique=True)
     start_date = Column(DateTime, nullable=True)
