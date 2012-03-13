@@ -41,3 +41,12 @@ def main(argv=sys.argv):
                       description=('An all-weekend event where newcomers'
                                    ' can learn about programming in Python'))
         DBSession.add(model)
+
+        model = Event(title=u'Montréal-Python 29', 
+                      start_date=datetime.now(), 
+                      end_date=datetime.now(),
+                      longitude=73.35, 
+                      latitude=45.30, 
+                      description=('An all-weekend event where newcomers'
+                                   ' can learn about programming in Python'))
+        DBSession.add(model)
