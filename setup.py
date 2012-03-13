@@ -14,6 +14,7 @@ requires = [
     'pyramid_debugtoolbar',
     'zope.sqlalchemy',
     'waitress',
+    'WTForms==1.0.1',
     ]
 
 setup(name='pycomm',
