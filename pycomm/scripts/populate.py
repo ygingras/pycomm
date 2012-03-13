@@ -9,11 +9,12 @@ from pyramid.paster import (
     setup_logging,
     )
 
-from ..models import (
+from pycomm.models import (
     DBSession,
-    MyModel,
     Base,
     )
+
+from pycomm.models.events import Event
 
 def usage(argv):
     cmd = os.path.basename(argv[0])
@@ -31,5 +32,5 @@ def main(argv=sys.argv):
     DBSession.configure(bind=engine)
     Base.metadata.create_all(engine)
     with transaction.manager:
-        model = MyModel(name='one', value=1)
+        model = Event(name='Python Boston Workshop')
         DBSession.add(model)
