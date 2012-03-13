@@ -1,6 +1,7 @@
 import os
 import sys
 import transaction
+from datetime import datetime
 
 from sqlalchemy import engine_from_config
 
@@ -32,5 +33,11 @@ def main(argv=sys.argv):
     DBSession.configure(bind=engine)
     Base.metadata.create_all(engine)
     with transaction.manager:
-        model = Event(name='Python Boston Workshop')
+        model = Event(title='Python Boston Workshop', 
+                      start_date=datetime.now(), 
+                      end_date=datetime.now(),
+                      longitude=71.03, 
+                      latitude=42.21, 
+                      description=('An all-weekend event where newcomers'
+                                   ' can learn about programming in Python'))
         DBSession.add(model)

@@ -1,12 +1,23 @@
 
-from sqlalchemy import Column, Integer, Text
+from sqlalchemy import (Column, 
+                        Integer, 
+                        Unicode, 
+                        UnicodeText, 
+                        DateTime, 
+                        Float)
 from pycomm.models import Base
 
 class Event(Base):
-    __tablename__ = 'models'
+    __tablename__ = 'events'
     id = Column(Integer, primary_key=True)
-    name = Column(Text, unique=True)
+    title = Column(Unicode, unique=True)
+    start_date = Column(DateTime, nullable=True)
+    end_date = Column(DateTime, nullable=True)
 
-    def __init__(self, name):
-        self.name = name
+    longitude = Column(Float, nullable=True)
+    latitude = Column(Float, nullable=True)
 
+    description = Column(UnicodeText, nullable=True)
+
+    contact_name = Column(Unicode)
+    contact_email = Column(Unicode)
