@@ -3,11 +3,11 @@
 <html>
   <body>
     <ul>
+      % for event in events:
       <li>
-        % for event in events:
           ${event.title}
-        % endfor
       </li>
+      % endfor
     </ul>
   </body>
 </html>
