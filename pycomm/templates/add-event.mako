@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*- 
+<%inherit file="base.mako"/>
 
-<h2>Add Event</h2>
+<h1>Add Event</h1>
 
 <form method=post action="/add-event">
 <dl class="input-errors">
