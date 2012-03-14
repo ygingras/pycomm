@@ -11,7 +11,9 @@
 	<tbody>
 		% for event in events:
 		<tr>
-			<td>${event.title}</td>
+			<td>
+				<a href="${request.route_url('view-event', id=event.id)}" target="_blank">${event.title}</a>
+			</td>
 			<td>${event.start_date.strftime('%Y-%m-%d %H:%M')}</td>
 		</tr>
 		% endfor

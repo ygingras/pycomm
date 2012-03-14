@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from pyramid.httpexceptions import HTTPNotFound
 from pyramid.view import view_config
 
 from ..forms.events import EventAddForm
@@ -17,6 +18,19 @@ class Events(BaseView):
     def home(self):
         events = DBSession.query(Event).all()
         return {'events':events}
+
+    @view_config(
+        route_name='view-event',
+        request_method='GET',
+        renderer='pycomm:templates/view-event.mako'
+        )
+    def view(self):
+        event = DBSession.query(Event)\
+            .filter_by(id=self.matchdict.get('id'))\
+            .first()
+        if not event:
+            return HTTPNotFound()
+        return {'event':event}
 
     @view_config(
     	route_name='add-event',
