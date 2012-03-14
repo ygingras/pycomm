@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*- 
-<%inherit file="base.mako"/>
+<%inherit file="master.mako"/>
 <%namespace name="forms" file="/forms.mako"/>
 
 <h1>Add Event</h1>
@@ -29,12 +29,13 @@
 </form>
 
 <%def name="extra_footer_css()">
-    <link type="text/css"   
-          href="${request.static_url('pycomm:static/css/jquery-ui-1.8.18.custom.css')}" 
-          rel="Stylesheet" />	
+  <link type="text/css"   
+        href="${request.static_url('pycomm:static/css/jquery-ui-1.8.18.custom.css')}" 
+        rel="Stylesheet" />	
 </%def>
 
 <%def name="extra_footer_js()">
+      ${parent.extra_footer_js()}
       <script type="text/javascript"
               src="${request.static_url('pycomm:static/js/jquery-1.7.1.min.js')}">
       </script>
