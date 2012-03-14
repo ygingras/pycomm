@@ -12,14 +12,6 @@ from ..models.events import Event
 class Events(BaseView):
 
     @view_config(
-    	route_name='home', 
-    	renderer='pycomm:templates/home.mako'
-    	)
-    def home(self):
-        events = DBSession.query(Event).all()
-        return {'events':events}
-
-    @view_config(
         route_name='view-event',
         request_method='GET',
         renderer='pycomm:templates/view-event.mako'
