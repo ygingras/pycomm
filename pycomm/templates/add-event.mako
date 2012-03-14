@@ -13,6 +13,7 @@
 
     ${forms.render(form.title)}
     ${forms.render(form.start_date)}
+    ${forms.render(form.start_time)}
     ${forms.render(form.end_date)}
     ${forms.render(form.longitude)}
     ${forms.render(form.latitude)}
@@ -44,6 +45,7 @@
 
       <script>
         $(document).ready(function() {
+          $.datepicker.setDefaults({dateFormat: "yy-mm-dd"});
           $('#start_date').datepicker();
           $('#end_date').datepicker();
         });
