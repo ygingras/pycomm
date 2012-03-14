@@ -15,6 +15,36 @@
 <div id="current">Initializing...</div>
 <div id="map_canvas" style="width:100%; height:300px"></div>
 
+<div id="events">
+	<h2>Events</h2>
+	% if events:
+	<table class="table table-bordered table-striped">
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Date</th>
+				<th>Contact</th>
+				<th>Email</th>
+			</tr>
+		</thead>
+		<tbody>
+			% for event in events:
+			<tr>
+				<td>${event.title}</td>
+				<td>${event.start_date.strftime('%Y-%m-%d %H:%M')}</td>
+				<td>${event.contact_name}</td>
+				<td>${event.contact_email}</td>
+			</tr>
+			% endfor
+		</tbody>
+	</table>
+	% else:
+	<div class="alert alert-block">
+		<strong>No events</strong>
+	</div>
+	% endif
+</div>
+
 
 
 <%def name="extra_footer_js()">

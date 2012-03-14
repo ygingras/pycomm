@@ -15,8 +15,8 @@ class Events(BaseView):
     	renderer='pycomm:templates/home.mako'
     	)
     def home(self):
-        one = DBSession.query(Event).first()
-        return {'one':one, 'project':'pycomm'}
+        events = DBSession.query(Event).all()
+        return {'events':events}
 
     @view_config(
     	route_name='add-event',
