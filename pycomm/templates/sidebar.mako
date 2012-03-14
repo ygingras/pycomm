@@ -5,7 +5,7 @@
 <table class="table table-bordered table-striped">
 	<thead>
 		<tr>
-			<th colspan="2">Upcoming vents</th>
+			<th colspan="2">Upcoming Events</th>
 		</tr>
 	</thead>
 	<tbody>
