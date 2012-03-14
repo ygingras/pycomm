@@ -21,7 +21,7 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container master-layout">
 
   ${self.common.flash()}
   ${next.body()}
@@ -29,10 +29,14 @@
   <hr>
 
   <footer>
-    <p>&copy; Pycomm 2012</p>
+    <p>&copy; Python Communities 2012</p>
   </footer>
 
 </div> <!-- /container -->
+
+<%def name="extra_footer_css()">
+  <link href="${request.static_url('pycomm:static/css/responsive.css')}?v=${self.attr.rid}" rel="stylesheet">
+</%def>
 
 <%def name="extra_footer_js()">
   <script src="${request.static_url('pycomm:static/js/jquery-1.7.1.min.js')}"></script>
